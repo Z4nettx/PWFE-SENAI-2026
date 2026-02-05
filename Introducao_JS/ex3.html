@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de valores inteiros</title>
+</head>
+<body>
+    <h1>Soma de valores inteiros</h1>
+    <input type="number" id="n1">
+    +
+    <input type="number" id="n2">
+    <input type="button" value="Somar">
+    <h2></h2>
+</body>
+<script>
+    var n1;
+    var n2;
+    var soma;
+    const h2 = document.querySelector('h2');
+    const button = document.querySelector('[type = "button"]')
+
+    function somar() {
+
+    n1 = document.querySelector('#n1').value;
+    n2 = document.querySelector('#n2').value;
+
+    soma = parseInt(n1) + parseInt(n2);
+    h2.innerHTML = `<strong>A soma resultou em <em>${soma}</em> </strong>`;
+    }
+
+    button.addEventListener("click", somar);
+</script>
+</html>
