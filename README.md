@@ -2,4 +2,4 @@
 ### Programação Web Front-End
 <hr>
 
-#### Repositório destinado a Programação Web Back-End no curso técnico de Análise e Desenvolvimento de Sistemas no SENAI 
+#### Repositório destinado a Programação Web Front-End no curso técnico de Análise e Desenvolvimento de Sistemas no SENAI 
