@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Intervalo entre datas</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .btn-limpar {
+            background-color: #888;
+        }
+        #resultado {
+            margin-top: 20px;
+            background: white;
+            padding: 30px 140px;
+            display: inline-block;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+        }
+    </style>
+</head>
+<body>
+    <h1> 📆 Calculadora de Intervalo entre datas</h1>
+
+    <label for="data1">Digite a primeira data</label>
+    <input type="date" name="" id="data1">
+
+    <label for="data2">Digite a segunda data</label>
+    <input type="date" name="" id="data2">
+
+    <br>
+
+    <button onclick="calcularIntervalo()">Calcular Intervalo</button>
+    <button class="btn-limpar" onclick="limparCampos()">Limpar Campos</button>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularIntervalo() {
+            const data1 = document.getElementById("data1").value
+            const data2 = document.getElementById("data2").value
+
+            if (!data1 || !data2) {
+                document.getElementById("resultado").innerHTML =
+                "<strong style='color:red;'> ⚠️ Por favor, preencha as duas datas antes de calcular! </strong>";
+                return; // retorna ao if novamente e se a condição for válida, segue o código
+            }
+            const d1 = new Date(data1);
+            const d2 = new Date(data2);
+
+            const diffEmMs = Math.abs(d2 - d1);
+
+            /* 
+            EXPLICACAO:
+            1 segundo = 1000ms
+            1 minuto = 60 segundos
+            1 hora = 60 minutos
+            1 dia = 24 horas
+            Logo, 1 dia = 1000 * 60 * 60 * 24 milissegundos
+            
+            
+            */
+
+            const diffEmDias = Math.floor(diffEmMs / (1000*60*60*24));
+
+            const diffEmMeses = Math.floor(diffEmDias / 30);
+            const diffEmAnos = Math.floor(diffEmMeses / 12);
+
+            document.getElementById("resultado").innerHTML = 
+            `<h3> 🕐 Resultado: </h3>
+             <p><strong>Diferença em dias: </strong> ${diffEmDias}</p>
+             <p><strong>Diferença em meses (aproximado): </strong> ${diffEmMeses}</p>
+             <p><strong>Diferença em anos (aproximado): </strong> ${diffEmAnos}</p>
+            `;            
+        }
+        function limparCampos() {
+            document.getElementById("data1").value = "";
+            document.getElementById("data2").value = "";
+
+            document.getElementById("resultado").innerHTML = "";
+
+            document.getElementById("data1").focus();
+        }
+    </script>
+</body>
+</html>
