@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nome">Digite seu nome:</label>
+    <input type="text" id="nome">
+    <button>Enviar</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    let autorizados = ["Ana", "Carlos", "Marta", "João"];
+    const button = document.querySelector("button");
+    input = document.querySelector("#nome");
+    
+    resultado = document.querySelector("#resultado");
+    
+    button.addEventListener("click", ()=> {
+        nome = input.value;
+        hora = Number(prompt(`${nome}, digite a hora atual`));
+
+        if (autorizados.includes(nome)) {
+            if (hora < 22) {
+                resultado.innerHTML = `Bem vindo(a), ${nome}!`
+            } else {
+                resultado.innerHTML = "Acesso <strong>negado</strong>, fora do horário permitido";
+            }
+        } else {
+            resultado.innerHTML = "<em>Acesso negado, usuário não cadastrado</em>";
+        }
+
+    })
+
+
+</script>
+</html>
