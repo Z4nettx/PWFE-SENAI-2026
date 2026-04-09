@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "email": "eduardo@gmail.com",
+        "senha": "eduardo123"
+    },
+    {
+        "id": 2,
+        "email": "mariana@hotmail.com",
+        "senha": "mariana456"
+    },
+    {
+        "id": 3,
+        "email": "carlos@outlook.com",
+        "senha": "carlos789"
+    },
+    {
+        "id": 4,
+        "email": "ana.silva@gmail.com",
+        "senha": "ana2024"
+    },
+    {
+        "id": 5,
+        "email": "lucas.oliveira@yahoo.com",
+        "senha": "lucas@pass"
+    },
+    {
+        "id": 6,
+        "email": "beatriz@gmail.com",
+        "senha": "beasuper123"
+    },
+    {
+        "id": 7,
+        "email": "rodrigo.santos@bol.com.br",
+        "senha": "rod777"
+    },
+    {
+        "id": 8,
+        "email": "fernanda@gmail.com",
+        "senha": "fer_nanda00"
+    },
+    {
+        "id": 9,
+        "email": "gustavo@outlook.com",
+        "senha": "gus_123456"
+    },
+    {
+        "id": 10,
+        "email": "julia.mendes@gmail.com",
+        "senha": "julia_secret"
+    }
+]
